@@ -46,6 +46,8 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 
 ```bash
 pip install -r requirements.txt
+```
+```bash
 pip install --no-build-isolation git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2
 pip install --no-build-isolation git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
 pip install --no-build-isolation git+https://github.com/NVlabs/nvdiffrast.git
@@ -127,7 +129,7 @@ The camera frames should satisfy the following assumptions:
 * each camera should face toward the origin / workspace center,
 * all camera centers should lie on the surface of a sphere with the same radius.
 
-Please refer to `notebooks/raw_Data_visualization.ipynb` for an example.
+Please refer to `notebooks/raw_data_visualization.ipynb` for an example.
 
 Under this assumption, you can set the following fields in the config file:
 

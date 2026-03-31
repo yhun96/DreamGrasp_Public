@@ -157,23 +157,6 @@ class DreamGrasp(BaseLift3DSystem):
 					gt_rgb.unsqueeze(1).repeat(1, gt_instance_mask.shape[-1], 1, 1, 1)[gt_instance_mask.permute(0, 3, 1, 2)],
 					out["comp_instancewise_rgb"][gt_instance_mask.permute(0, 3, 1, 2)])
 				)
-				
-				# if self.true_global_step % 10 == 0:
-				#     self.save_image_grid(
-				#         f"it{self.true_global_step}_instance_rgb.png",
-				#         (
-				#         [
-				#             {
-				#                 "type": "rgb",
-				#                 "img": instance_rgb,
-				#                 "kwargs": {"data_format": "HWC", "data_range": (0, 1)},
-				#             }
-				#             for instance_rgb in out["comp_instancewise_rgb"][0]
-				#         ]
-				#         if "comp_instancewise_rgb" in out
-				#         else []
-				#     )
-				#     )
 			
 			# constrastive loss
 			if (self.C(self.cfg.loss.lambda_mask_contrast) > 0) and (self.true_global_step < self.cfg.freq.get("segmentation_start_iter")):
@@ -671,14 +654,6 @@ class DreamGrasp(BaseLift3DSystem):
 		return verts, faces
 
 	def postprocess_mesh(self, verts, faces, decimate_target=1e5):
-		# try:
-		#     verts, faces = clean_mesh(
-		#     verts, faces, remesh=True, remesh_size=0.015
-		#     )
-		#     if decimate_target > 0 and faces.shape[0] > decimate_target:
-		#         verts, faces = decimate_mesh(verts, faces, decimate_target)
-		# except:
-		#     pass
 		mesh = o3d.geometry.TriangleMesh()
 		mesh.vertices = o3d.utility.Vector3dVector(verts)
 		mesh.triangles = o3d.utility.Vector3iVector(faces)

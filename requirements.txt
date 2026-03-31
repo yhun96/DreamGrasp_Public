@@ -10,7 +10,7 @@ tensorboard
 matplotlib
 imageio>=2.28.0
 imageio[ffmpeg]
-libigl
+libigl==2.5.1
 xatlas
 trimesh[easy]
 networkx
@@ -21,7 +21,7 @@ gradio==4.11.0
 torchmetrics
 
 # deepfloyd
-xformers
+xformers==0.0.29.post3
 bitsandbytes==0.38.1
 sentencepiece
 safetensors
@@ -32,16 +32,15 @@ einops
 kornia
 taming-transformers-rom1504
 
-# #controlnet
-# controlnet_aux
+#controlnet
+controlnet_aux
 
 # custom
 open3d
-# pybullet==3.2.3
 numba
 tensorflow
 gsplat==1.4.0
 plyfile
-# pymeshlab
-# coacd
-# pycuda
+pymeshlab
+coacd
+pycuda
