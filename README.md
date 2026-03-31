@@ -10,6 +10,7 @@ First, clone this repository and `threestudio`, then place the custom DreamGrasp
 
 ```bash
 git clone https://github.com/yhun96/DreamGrasp_Public
+cd DreamGrasp_Public
 git clone https://github.com/threestudio-project/threestudio # tested on threestudio v0.1.0
 mv DreamGrasp threestudio/custom
 ````
@@ -45,6 +46,11 @@ pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https
 
 ```bash
 pip install -r requirements.txt
+pip install --no-build-isolation git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2
+pip install --no-build-isolation git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+pip install --no-build-isolation git+https://github.com/NVlabs/nvdiffrast.git
+pip install --no-build-isolation git+https://github.com/ashawkey/envlight.git
+pip install --no-build-isolation git+https://github.com/openai/CLIP.git
 ```
 
 5. Install `simple-knn`.
@@ -52,7 +58,7 @@ pip install -r requirements.txt
 ```bash
 cd threestudio/custom
 git clone https://github.com/DSaurus/simple-knn.git
-pip install ./simple-knn
+pip install --no-build-isolation ./simple-knn
 ```
 
 ---
@@ -60,6 +66,16 @@ pip install ./simple-knn
 ## Download Zero123
 
 Download the Zero123 checkpoint `stable-zero123.ckpt` from https://huggingface.co/stabilityai/stable-zero123 and place it in `threestudio/load/zero123`.
+
+---
+
+## Download Datasets
+
+The demo dataset can be downloaded from Google Drive:
+
+https://drive.google.com/file/d/1xQahIXKU9reHsjp-Ogx-TDf9J_kNP46P/view?usp=sharing
+
+Please place the extracted files so that the path becomes `DreamGrasp_Public/datasets/Objects_2/...`.
 
 ---
 
@@ -75,16 +91,6 @@ The outputs are saved in:
 ```bash
 threestudio/outputs/dreamgrasp/exp
 ```
-
----
-
-## Download Datasets
-
-The demo dataset can be downloaded from Google Drive:
-
-https://drive.google.com/file/d/1xQahIXKU9reHsjp-Ogx-TDf9J_kNP46P/view?usp=sharing
-
-Please place the extracted files so that the path becomes `DreamGrasp_Public/datasets/Objects_2/...`.
 
 ---
 
