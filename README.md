@@ -108,7 +108,7 @@ cd threestudio
 python launch.py --config {your_config_path}.yaml --train --gpu 0
 ```
 
-For preprocessing and postprocessing examples, please refer to the notebooks in the `notebook` folder.
+For preprocessing and postprocessing examples, please refer to the notebooks in the `notebooks` folder.
 
 ---
 
